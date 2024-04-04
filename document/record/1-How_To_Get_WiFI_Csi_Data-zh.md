@@ -15,10 +15,8 @@ CSI 全称叫做 信道状态信息(Channel State Information)。 它记录和�
 
 能够收集 CSI 数据的方式有很多种.[3] [4]
 
-#### Widar3 Dataset
-
+#### [Widar3 Dataset](http://tns.thss.tsinghua.edu.cn/widar3.0/)
 使用现有数据集是最快，最简单的方法。 [5]
-下载链接: http://tns.thss.tsinghua.edu.cn/widar3.0/
 该数据集主要由三部分组成 CSI 文件夹、DFS 文件夹、BVP 文件夹。 Widar3.0 是一个使用现成 Wi-Fi 设备的跨域手势识别系统。如图 5 所示，监控区域周围部署了多条无线链路。接收器采集监测区域中用户造成的无线信号失真，并记录其 CSI 测量结果并进行预处理，以消除幅度噪声和相位偏移。 Widar3.0 的主要部分是两个模块，BVP 生成模块和手势识别模块。 Widar3.0 收到清理后的 CSI 系列后，将 CSI 系列分成小段，并通过 BVP 生成模块为每个 CSI 段生成 BVP。 Widar3.0 首先准备三个中间结果：DFS 轮廓、人的方向和位置信息。 DFS 配置文件是通过对 CSI 系列应用时频分析来估计的。通过运动跟踪方法计算人的方向和位置信息。此后，Widar3.0 应用所提出的基于压缩感知的优化方法来估计每个 CSI 段的 BVP。然后输出 BVP 系列用于后续手势识别。
 <img src="./img/Widar3.0-01.png">
 <img src="./img/Widar3.0-02.png">
@@ -144,6 +142,29 @@ BVP( body-coordinate ve-locity profile) : 描述了不同速度下的功率分�
 该工具包与Intel 5300 NIC CSI Tool类似，不过Atheros系列是开源的，不像Intel是闭源项目。 其基本方式是类似的。
 #### [ESP32 CSI Toolkit](https://stevenmhernandez.github.io/ESP32-CSI-Tool/)
 ESP32 CSI 工具包让研究人员可以直接从 ESP32 微控制器访问通道状态信息 (CSI)。使用该工具包闪存的 ESP32 可以从任何计算机、智能手机甚至独立设备提供在线 CSI 处理。这些功能加上 ESP32 的小尺寸，使研究人员能够以新的方式执行 Wi-Fi 传感和 CSI 定位等任务。所有这些都不需要复杂的固件破解。 与上面两种方法对比，更加的简单方便。
+
+### 展示CSI数据
+利用Matlab来展示CSI数据。 其中read_bf_file函数是Widar3数据集中的工具箱包含的，db则是信号处理工具箱带的。
+```matlab
+% disp csi数据 http://dhalperi.github.io/linux-80211n-csitool/faq.html
+% csi_tool_box/sample_data/log.all_csi.6.7.6
+csi_trace = read_bf_file('../CSI/20181116/user1/user1-1-6-1-1-r2.dat');
+disp(csi_trace)
+csi_entry = csi_trace{1};
+
+csi = get_scaled_csi(csi_entry);
+
+plot(db(abs(squeeze(csi).')));
+% 天线 A B C
+legend('RX Antenna A', 'RX Antenna B', 'RX Antenna C', 'Location', 'SouthEast' );
+
+xlabel('Subcarrier index');
+% SNR 信噪比
+ylabel('SNR [dB]');
+```
+#### 显示效果
+<img src="./img/show-csi-data.png" >
+
 ### 基于 WIFI CSI 数据的手势识别
 
 #### 知识点
