@@ -145,11 +145,12 @@ ESP32 CSI 工具包让研究人员可以直接从 ESP32 微控制器访问通道
 
 ### 展示CSI数据
 利用Matlab来展示CSI数据。 其中read_bf_file函数是Widar3数据集中的工具箱包含的，db则是信号处理工具箱带的。
-```matlab
+```MATLAB
+
 % disp csi数据 http://dhalperi.github.io/linux-80211n-csitool/faq.html
 % csi_tool_box/sample_data/log.all_csi.6.7.6
 csi_trace = read_bf_file('../CSI/20181116/user1/user1-1-6-1-1-r2.dat');
-disp(csi_trace)
+
 csi_entry = csi_trace{1};
 
 csi = get_scaled_csi(csi_entry);
@@ -161,9 +162,12 @@ legend('RX Antenna A', 'RX Antenna B', 'RX Antenna C', 'Location', 'SouthEast' )
 xlabel('Subcarrier index');
 % SNR 信噪比
 ylabel('SNR [dB]');
+
 ```
 #### 显示效果
 <img src="./img/show-csi-data.png" >
+
+#### 对CSI数据的理解
 
 ### 基于 WIFI CSI 数据的手势识别
 
