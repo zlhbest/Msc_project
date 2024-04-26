@@ -2,14 +2,14 @@
 Based on the research work at https://github.com/yongsen/SignFi, the project is reproduced and machine learning related algorithms improve accuracy based on the project.
 ### Project parts
 * Doing Research and prepare 
-  * Learn about analysis and parsing CSI data using python or matlab
-  * Learn deep learning algorithms and try programming using matlab or python
+  * Learn about analysis and parsing CSI data using python or matlab **(2024-06-10 - 2024-06-16)**
+  * Learn deep learning algorithms and try programming using matlab or python **(2024-06-17 - 2024-06-30)**
 * Reproduce the SignFi project
-  * Learn about the project
-  * Use this dataset to reproduce the project
-  * Test the accuracy and precision of this project
-* Find suitable algorithms to improve accuracy
-* Write documentation
+  * Learn about the project **(2024-06-24 - 2024-07-03)**
+  * Use this dataset to reproduce the project  **(2024-07-01 - 2024-07-28)**
+  * Test the accuracy and precision of this project **(2024-07-24 - 2024-08-04)**
+* Find suitable algorithms to improve accuracy   **(2024-08-01 - 2024-08-25)**
+* Write documentation **(2024-06-24 - 2024-09-05)**
 
 
 ### Plan 
