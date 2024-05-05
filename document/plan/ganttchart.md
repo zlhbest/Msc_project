@@ -36,10 +36,10 @@ gantt
     section Literature Review
     reading 20 articles and learn        :active,pre_task1, 2024-04-29,2024-06-10
     reading 2 articles          : active,read1, 2024-04-29,1w
-    reading 5 articles          : read2, 2024-05-06,1w
-    reading 5 articles          : read3,2024-05-13,1w
-    reading 5 articles          : read3,2024-05-20,1w
-    reading 5 articles          : read3,2024-05-27,1w
+    reading 3 articles          : read2, 2024-05-06,1w
+    reading 3 articles          : read3,2024-05-13,1w
+    reading 3 articles          : read3,2024-05-20,1w
+    reading 3 articles          : read3,2024-05-27,1w
     Summarize learning content  : sum,2024-06-03,1w
     submit project plan         : milestone, m1, 2024-05-15,
 
