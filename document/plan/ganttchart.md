@@ -45,13 +45,14 @@ gantt
 
 
     section Research
+    start project         : milestone, m2, 2024-06-10,
     Data Acquisition and Preprocessing  : task1,2024-06-03,3w
     Model Selection and Design          : task2, after task1,2w
     Dataset Splitting and Training      : task3, 2024-07-01,3w
     Model Evaluation                    : task4, 2024-07-08,3w
     Results Interpretation and Analysis : task5, after task4,2w
-    Start date of demonstrations        : milestone,m2,2024-08-19,
-    Dissertation handin                 : milestone,m3,2024-09-05,
+    Start date of demonstrations        : milestone,m3,2024-08-19,
+    Dissertation handin                 : milestone,m4,2024-09-05,
 
     section document
     write project plan : active, plan,2024-04-29,until m1
